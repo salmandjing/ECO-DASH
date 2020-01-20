@@ -3,7 +3,7 @@
   background-image: url(image.jpeg) ;
   margin: 0;
 position: absolute;
-top: 35%;
+top: 50%;
 left: 50%;
 margin-right: -50%;
 transform: translate(-50%, -50%);
@@ -14,10 +14,10 @@ display: inline-block;
 width: 400px;
 height: 300px;
 background-color: #d8d8d8;
-margin: 10px;
+margin: 12px;
 border-radius:.5rem;
   opacity: .7;
-  font-size: 30px;
+  font-size: 17px;
   font-family:Marker Felt, fantasy;
   
 }
@@ -35,7 +35,7 @@ width: 90%;
 height: 150px;
 opacity: 1;
 border-radius:.5rem;
-  font-size: 35px;
+  font-size: 2px;
   font-family:Marker Felt, fantasy;
   color: white;
 }
