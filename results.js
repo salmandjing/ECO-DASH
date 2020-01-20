@@ -1,10 +1,11 @@
+
 var fixedDriveDist ,fixedBusDist,walkDistanceInt,driveDistanceInt,busDistanceInt,homeEnergy,homeEnergyBus; 
 var coalsBurned,coalsBurnedBus, smartphones, smartphonesBus;
 var carHomeEnergyFootString,carCoalFootString,carSmartphoneString;
 var busHomeEnergyFootString,busCoalFootString,busSmartphoneString;
 
 
-var key = "INSERT_APIKEY_TO_OPENWEATHERMAP";
+var key = "88621037f60758dec99ffb1571911b10";
 
 (() => {
     runPage();
@@ -52,14 +53,31 @@ function fillBusHTMLPage(){
 
    
    if(weatherInt > 50){
-    document.getElementById("walkInput").innerHTML = "The weather is :" + weatherInt + " degrees Fahrenheit. If you can you should walk. The distance is " + walkDistInt + " miles";
+    document.getElementById("walkInput").innerHTML = "The weather is :" + weatherInt + " degrees Fahrenheit.";
+    document.getElementById("walkInputDriveDist").innerHTML = "";
+    document.getElementById("walkInputCarCoal").innerHTML ="If you can you should walk.";
+    document.getElementById("walkInputHome").innerHTML ="The distance is " + walkDistInt + " miles";
+    document.getElementById("walkInputSmartphone").innerHTML = "&#13;&#10;";
+
    }else if(weatherInt > 30 && weatherInt < 50){
-    document.getElementById("walkInput").innerHTML = "The weather is " + weatherInt + " degrees Fahrenheit. Might be nippy. The distance is " + walkDistInt + " miles";
+    document.getElementById("walkInput").innerHTML = "The weather is :" + weatherInt + " degrees Fahrenheit.";
+    document.getElementById("walkInputDriveDist").innerHTML = "";
+    document.getElementById("walkInputCarCoal").innerHTML ="Might Be nippy";
+    document.getElementById("walkInputHome").innerHTML ="The distance is " + walkDistInt + " miles";
+    document.getElementById("walkInputHome").innerHTML = " ";
    }else if(weatherInt < 30){
-    document.getElementById("walkInput").innerHTML = "The weather is " + weatherInt + " degrees Fahrenheit. I wouldn't walk. The distance is " + walkDistInt + " miles"+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+      document.getElementById("walkInput").innerHTML = "The weather is :" + weatherInt + " degrees Fahrenheit.";
+    document.getElementById("walkInputDriveDist").innerHTML = "I wouldn't walk";
+    document.getElementById("walkInputCarCoal").innerHTML = "The distance is " + walkDistInt + " miles";
+    document.getElementById("walkInputHome").innerHTML ="&#13;&#10;";
+    document.getElementById("walkInputHome").innerHTML = "&#13;&#10;";
    }
-   document.getElementById("busInput").innerHTML = fixedBusDist + " pounds" + busCoalFootString + " " + busHomeEnergyFootString + " " +busSmartphoneString;
    
+   document.getElementById("busInputDriveDist").innerHTML = fixedBusDist + " pounds of carbon ";
+   document.getElementById("busInputCarCoal").innerHTML = busCoalFootString; 
+   document.getElementById("busInputHome").innerHTML = busHomeEnergyFootString 
+   document.getElementById("busInputSmartphone").innerHTML = busSmartphoneString;
+
    
 }
 
@@ -77,8 +95,10 @@ function fillCarHTMLPage(){
     
     
   
-    document.getElementById("driveInput").innerHTML = fixedDriveDist + " pounds" + carCoalFootString + " " + carHomeEnergyFootString + " " +carSmartphoneString;
-   
+    document.getElementById("driveInputDriveDist").innerHTML = fixedDriveDist + "pounds of carbon";
+    document.getElementById("driveInputCarCoal").innerHTML =  carCoalFootString;
+    document.getElementById("driveInputHome").innerHTML =carHomeEnergyFootString;
+    document.getElementById("driveInputSmartphone").innerHTML =carSmartphoneString;
     
     
 }
